@@ -1,0 +1,30 @@
+#include<stdio.h>
+
+int main()
+{
+
+	while (1)
+	{
+		int n = 0;
+		int tr = 0, tr1 = 0;
+		printf("Enter the value \n");
+		scanf("%d", &n);
+
+		while (n != 0)
+		{
+			if (n & 1)
+			{
+				if (tr > tr1)
+					tr1 = tr;
+
+				tr = 0;
+			}
+			else
+				tr++;
+
+			n = n >> 1;
+		}
+
+		printf("Number of trailing zeros %d \n", tr1);
+	}
+}

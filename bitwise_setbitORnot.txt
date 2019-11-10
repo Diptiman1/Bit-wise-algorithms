@@ -1,0 +1,39 @@
+#include<stdio.h>
+
+int main()
+{
+	
+	while (1)
+	{
+		int n = 0;
+		int flag = 1;
+	printf("Enter a number \n");
+	scanf("%d", &n);
+	
+		while (n != 0)
+		{
+			if ((n & 1))
+			{
+				n = n >> 1;
+				continue;
+			}
+			else
+			{
+				flag = 0;
+				break;
+			}
+
+
+		}
+
+		if (flag)
+		{
+			printf("All bits are 1 or set \n");
+
+		}
+		else
+		{
+			printf("some bit/s are not set \n");
+		}
+	}
+}

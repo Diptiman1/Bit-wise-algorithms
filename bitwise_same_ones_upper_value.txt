@@ -1,0 +1,41 @@
+#include<stdio.h>
+
+int cnt_one(int n1)
+{
+	int cnt = 0;
+	while (n1 != 0)
+	{
+		cnt += (n1 & 1);
+		n1 = n1 >> 1;
+	}
+
+	return cnt;
+}
+
+int main()
+{
+
+	while (1)
+	{
+		int n = 0;
+		int x = 0;
+		int count_org = 0, count = 0;
+		printf("Enter the value \n");
+		scanf("%d", &n);
+
+		count_org = cnt_one(n);
+
+		while (count != count_org)
+		{
+
+			n = n + 1;
+
+			count = cnt_one(n);
+		}
+
+		printf("The next upper value with same 1's %d \n", n);
+
+	}
+
+
+}

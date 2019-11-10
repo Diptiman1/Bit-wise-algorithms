@@ -1,0 +1,67 @@
+//Count number of bits to be flipped to convert A to B
+
+#include<stdio.h>
+
+#include<stdlib.h>
+#include<stdint.h>
+#include<ctype.h>
+
+
+
+int takeInputa()
+{
+	int a;
+
+	printf("\n Enter the value of a \n");
+	scanf("%d", &a);
+
+	return a;
+}
+
+int takeInputb()
+{
+	int b;
+
+	printf("\n Enter the value of b \n");
+	scanf("%d", &b);
+	return b;
+}
+
+void compareNccount(int a, int b)
+{
+	int flipcount = 0;
+	int n=0, m=0;
+	while (1)
+	{
+		n = a & 1;
+		m = b & 1;
+		if (n != m)
+		{
+			flipcount++;
+		}
+
+		a = a >> 1;
+		b = b >> 1;
+		if (a == 0 && b == 0)
+		{
+			break;
+		}
+	}
+
+	printf("\n The flip count is : %d\n", flipcount);
+
+
+}
+
+
+
+int main()
+{
+	int a, b;
+	a= takeInputa();
+	b= takeInputb();
+
+	compareNccount(a,b);
+	return 0;
+
+}

@@ -1,0 +1,35 @@
+// No. of set bits from range 1 to n
+
+#include<stdio.h>
+#include<ctype.h>
+#include<stdlib.h>
+#include<stdint.h>
+
+
+int main()
+{
+	int n=0;
+	int i, count = 0, m;
+
+	printf("\n Enter the range \n");
+	scanf("%d", &n);
+
+
+	for (i = 1; i <= n; i++)
+	{
+		m = i;
+		while (m > 0)
+		{
+			if ((m & 1))
+			{
+				count++;
+				
+			}
+			m = m >> 1;
+
+		}
+	}
+
+	printf("\n The no. of set bits from range 1 to %d are %d \n", n, count);
+
+}

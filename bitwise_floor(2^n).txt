@@ -1,0 +1,43 @@
+//#include<iostream>
+#include<stdio.h>
+#include<stdlib.h>
+#include<string>
+#include<string.h>
+using namespace std;
+
+
+int do_shift(int n1)
+{
+	n1 |= n1 >> 1;
+	n1 |= n1 >> 2;
+	n1 |= n1 >> 4;
+	n1 |= n1 >> 8;
+	n1 |= n1 >> 16;
+	return n1;
+}
+
+int main()
+{
+	int n = 0;
+
+	while (1) {
+		printf("Please enter value \n");
+		scanf("%d", &n);
+
+		if (n < 0)
+		{
+			n = 0 - n;
+			n = do_shift(n);
+			n = n + 1;
+			printf("\n the nearest mult of 2 is %d  \n", 0 - n);
+		}
+
+		else
+		{
+			n = do_shift(n);
+			n = n - (n >> 1);
+
+			printf("\n the nearest mult of 2 is %d  \n", n);
+		}
+	}
+}
